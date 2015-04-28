@@ -16,7 +16,7 @@
 
         return {
             restrict: 'E',
-            templateUrl: '../../../Views/navbar.html',
+            templateUrl: '../../../views/navbar.html',
             controller: ['$http', '$scope', function ($http, $scope) {
                 $scope.menu1 = menu1;
                 $scope.menu2 = menu2;
