@@ -1,4 +1,4 @@
-﻿<nav class="navbar navbar-default">
+﻿<nav class="navbar navbar-default charcoal-gradient-bg">
     <div class="container-fluid col-lg-12 col-md-12">
         <div class="navbar-header nav-border-right col-lg-1 col-md-2">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-collapse">
@@ -7,40 +7,39 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand logo" href="#"><i class="red">Open</i><span class="white">&nbsp;ERP</span> </></a>
+            <a class="navbar-brand logo" href="#" data-ng-show="{{companyName.show}}"><i class="red">{{companyName.firstName}}</i><span class="white">&nbsp;{{companyName.lastName}}</span> </></a>
         </div>
 
         <div id="top-navbar-collapse" class="collapse navbar-collapse">
             <div class="col-lg-11 col-md-10">
                 <ul class="nav navbar-nav nav-border-right col-lg-4 col-md-4">
-                    <li class="nav-li-margin-xs custom-height" data-ng-repeat="menuItem in mainMenu">
+                    <li class="nav-li-margin-xs custom-height" data-ng-repeat="menuItem in mainMenu" data-ng-show="{{menuItem.show}}">
                         <a href="#{{menuItem.href}}">{{ menuItem.name }} </a>
                     </li>
                 </ul>
 
                 <form class="navbar-form navbar-left col-lg-4 col-md-3" role="search">
-                <div class="form-group">
-                    <div class="input-group">
-                        <input class="form-control transparent-bg border-radius-none black-border" placeholder="N204" />
-                        <span class="input-group-addon transparent-bg white border-radius-none black-border">X</span>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input class="form-control transparent-bg border-radius-none black-border" placeholder="{{search.placeholder}}" data-ng-show="{{search.show}}" />
+                            <span class="input-group-addon transparent-bg white border-radius-none black-border" data-ng-show="{{clearButton.show}}">{{clearButton.name}} </span>
+                        </div>
                     </div>
-                </div>
-
                 </form>
 
                 <ul class="nav navbar-nav nav-border-right col-lg-4 col-md-4">
-                    <li class="nav-li-margin-sm custom-height" data-ng-repeat="menuItem in menuTable">
-                        <a href="#{{menuItem.href}}" class="padding-top-none"><span>{{ menuItem.name }}<br />
+                    <li class="nav-li-margin-sm custom-height" data-ng-repeat="menuItem in menuTable" data-ng-show="{{menuItem.show}}">
+                        <a href="#{{menuItem.href}}" class="padding-top-none"><span>{{menuItem.name}}<br />
                             {{ menuItem.data }} </span></a>
                     </li>
-                    <li class="blue-bg"><a class="blue-bg">+</a></li>
+                    <li class="blue-bg"><a class="blue-bg" data-ng-show="{{addButton.show}}">{{addButton.name}}</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right col-lg-1 col-md-1">
                     <li>
-                        <label class="white">{{user.userName}}</label>
+                        <label class="white" data-ng-show="{{user.show}}">{{user.userName}}</label>
                         <br />
-                        <button type="submit" class="btn btn-default btn-sm">Logout</button>
+                        <button type="submit" class="btn btn-default btn-sm" data-ng-show="{{logout.show}}">{{logout.name}}</button>
                     </li>
                 </ul>
             </div>
