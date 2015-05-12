@@ -24,13 +24,9 @@
             restrict: 'E',
             templateUrl: '../../../views/productsCategoryContainer.html',
             require: "erpSearchBar",
-            //link: function (scope, element, attrs, erpSearchBarCtrl) {
-            //    query = erpSearchBarCtrl.search();
-            //},
             controller: ['$http', '$scope', function ($http, $scope) {
                 $scope.categories = categories;
                 $scope.subCategories = subCategories;
-                //$scope.query = query;
             }]
         }
     });

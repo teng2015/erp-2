@@ -6,7 +6,6 @@
     <link href="stylesheets/app/custom-style-sheet.css" rel="stylesheet" />
 </head>
 <body>
-
     <div>
         <erp-navbar></erp-navbar>
     </div>
@@ -20,18 +19,26 @@
             <div>
                 <erp-billable-entry></erp-billable-entry>
             </div>
+
             <div class="col-lg-6">
                 <erp-billing-options></erp-billing-options>
             </div>
+
             <div class="col-lg-6">
                 <erp-numpad-options></erp-numpad-options>
             </div>
         </div>
+
         <div class="col-lg-8">
-            
-            <erp-products-category-container></erp-products-category-container>
-            <erp-search-bar></erp-search-bar>
-            <erp-products-list></erp-products-list>
+            <div>
+                <erp-products-category-container></erp-products-category-container>
+            </div>
+            <div>
+                <erp-search-bar search-text="searchBeverages"></erp-search-bar>
+            </div>
+            <div>
+                <erp-products-list></erp-products-list>
+            </div>
         </div>
     </div>
 
@@ -53,5 +60,6 @@
     <script src="javascripts/app/directives/erp-productsCategoryContainer.js"></script>
     <script src="javascripts/app/directives/erp-searchBar.js"></script>
     <script src="javascripts/app/directives/erp_productsList.js"></script>
+    <script src="javascripts/app/directives/masterScript.js"></script>
 </body>
 </html>

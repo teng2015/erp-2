@@ -12,7 +12,7 @@
             { name: 'Coke Light', price: '1,50', href: '/', show: true },
             { name: 'Fanta', price: '1,50', href: '/', show: true },
             { name: 'Sprite', price: '1,50', href: '/', show: true },
-            { name: 'Schweppes',price: '1,50', href: '/', show: true },
+            { name: 'Schweppes', price: '1,50', href: '/', show: true },
             { name: 'Canada', price: '1,50', href: '/', show: true },
             { name: 'Aquarius', price: '1,50', href: '/', show: true },
             { name: 'Perrier', price: '1,50', href: '/', show: true },
@@ -22,13 +22,23 @@
             { name: 'Cocoa', price: '1,50', href: '/', show: true },
             { name: 'Tea', price: '1,50', href: '/', show: true },
         ];
+        var query;
 
         return {
             restrict: 'E',
+            scope: true,
             templateUrl: '../../../views/productsList.html',
             controller: ['$http', '$scope', function ($http, $scope) {
                 $scope.products = products;
-            }]
+                $scope.$watch("searchBeverages", function (searchBeverages) {
+                    query = searchBeverages;
+                });
+
+                $scope.filterFunction = function (element) {
+                    var regex = new RegExp(query);
+                    return element.name.match(regex) ? true : false;
+                };
+            }],
         }
     });
 })();

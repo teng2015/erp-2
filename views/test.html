@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <style type="text/css">
+        .container {
+            height: 500px;
+            overflow: auto;
+            border: 1px solid #000;
+        }
+
+        .active {
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript">
+        //function arrow(dir) {
+        //    var activeTableRow = $('#souj tbody tr.active')[dir]("#souj tbody tr");
+        //    if (activeTableRow.length) {
+        //        $('#souj tbody tr.active').removeClass("active");
+        //        activeTableRow.addClass('active');
+        //    }
+        //};
+
+
+        //function arrowDown() {
+        //    var activeTableRow = $('.table tbody tr.active').next(".table tbody tr");
+        //    if (activeTableRow.length) {
+        //        $('.table tbody tr.active').removeClass("active");
+        //        activeTableRow.addClass('active');
+        //    }
+        //};
+
+
+        $(document).keydown(function (key) {
+            if (key.keyCode == 40) {
+                alert("oho");
+                var activeTable = $("#souj").focus();
+                var activeRow = $("#souj tr:eq(1)").focus().addClass('highlight');
+                $("#souj tr:eq(1)").focus().removeClass('highlight');
+                $("#souj tr:eq(2)").focus().addClass('highlight');
+                //var activeTableRow = $('#souj tbody tr.active')[dir]("#souj tbody tr");
+            }
+            if (key.keyCode == 38) {
+                //arrow("prev");
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container" >
+        <table id="souj" class="table">
+            <thead>
+                <tr>
+                    <th>Head 1</th>
+                    <th>Head 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="active">
+                    <td>Column 1</td>
+                    <td>Column 2</td>
+                </tr>
+                <tr>
+                    <td>Column 1</td>
+                    <td>Column 2</td>
+                </tr>
+                <tr>
+                    <td>Column 1</td>
+                    <td>Column 2</td>
+                </tr>
+                <tr>
+                    <td>Column 1</td>
+                    <td>Column 2</td>
+                </tr>
+                <tr>
+                    <td>Column 1</td>
+                    <td>Column 2</td>
+                </tr>
+                <tr>
+                    <td>Column 1</td>
+                    <td>Column 2</td>
+                </tr>
+                <tr>
+                    <td>Column 1</td>
+                    <td>Column 2</td>
+                </tr>
+                <tr>
+                    <td>Column 1</td>
+                    <td>Column 2</td>
+                </tr>
+                <tr>
+                    <td>Column 1</td>
+                    <td>Column 2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
