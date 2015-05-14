@@ -23,7 +23,9 @@
         return {
             restrict: 'E',
             templateUrl: '../../../views/productsCategoryContainer.html',
-            require: "erpSearchBar",
+            scope: {
+                chosenCategory: '=',
+            },
             controller: ['$http', '$scope', function ($http, $scope) {
                 $scope.categories = categories;
                 $scope.subCategories = subCategories;
